@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UW-Whitewater Visitor Parking Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">UW-Whitewater</p>
+          <h1>Visitor Parking Guide</h1>
+          <p class="hero-text">
+            Plan where to park before you arrive with destination-based lot
+            recommendations, clickable map hotspots, and official visitor
+            parking guidance built around campus.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-action" href="https://uww.aimsparking.com/" target="_blank" rel="noreferrer">Buy a Visitor Permit</a>
+            <a class="secondary-action" href="https://www.uww.edu/studentaffairs/parking-regulations/visitors" target="_blank" rel="noreferrer">Official Visitor Rules</a>
+          </div>
+          <ul class="hero-pills" aria-label="Key parking facts">
+            <li>Weekend free parking starts Friday at 5 PM and ends Sunday 11 PM</li>
+            <li>Overnight kiosk parking goes to Lot 19</li>
+          </ul>
+        </div>
+        <aside class="hero-panel">
+          <h2>Quick facts</h2>
+          <div class="fact-grid">
+            <article>
+              <span class="fact-label">Office</span>
+              <strong>Visitor Center</strong>
+              <p>826 W. Starin Road</p>
+            </article>
+            <article>
+              <span class="fact-label">Hours</span>
+              <strong>Mon-Fri</strong>
+              <p>7:30 AM to 4:30 PM</p>
+            </article>
+            <article>
+              <span class="fact-label">Phone</span>
+              <strong>(262) 472-1011</strong>
+              <p>parking@uww.edu</p>
+            </article>
+            <article>
+              <span class="fact-label">AMP limit</span>
+              <strong>2 hours</strong>
+              <p>4 hours in Lots 11 and 23</p>
+            </article>
+            <article>
+              <span class="fact-label">LPR enforcement</span>
+              <strong>Enter plates carefully</strong>
+              <p>UW-Whitewater uses license plate recognition, so plate numbers must be entered correctly.</p>
+            </article>
+          </div>
+        </aside>
+      </header>
+
+      <main>
+        <section class="info-strip" aria-label="Visitor permit details">
+          <article class="info-card">
+            <p class="card-kicker">Temporary kiosk permits</p>
+            <h2>Rates</h2>
+            <ul>
+              <li>1 hour: $1.65</li>
+              <li>2 hours: $3.05</li>
+              <li>3 hours: $4.45</li>
+              <li>Day permit: $5.00</li>
+              <li>Overnight permit: $8.00</li>
+            </ul>
+          </article>
+          <article class="info-card">
+            <p class="card-kicker">When permits apply</p>
+            <h2>Permits Required</h2>
+            <p>
+              Permits are required at all times except University-recognized
+              holidays and weekends from Friday 5 PM through Sunday 11 PM.
+            </p>
+          </article>
+          <article class="info-card">
+            <p class="card-kicker">Important rule</p>
+            <h2>Overnight parking</h2>
+            <p>
+              Kiosk overnight parking between 2 AM and 5 AM must be in Lot 19.
+              Online visitor permits do not include overnight parking.
+            </p>
+          </article>
+        </section>
+
+        <section class="amp-section">
+          <article class="amp-card">
+            <p class="card-kicker">AMP pay-by-space</p>
+            <h2>Short-term zones</h2>
+            <p>
+              AMP spaces exist in Lots 1, 2, 3, 4, 7, 8, 11, 12, 12A, 14, and
+              23, plus Hyer, Koshkonong Drive, and Lauderdale Drive.
+            </p>
+          </article>
+          <article class="amp-card">
+            <p class="card-kicker">How time limits work</p>
+            <h2>Session caps</h2>
+            <p>
+              Most AMP areas allow up to 2 hours. Lots 11 and 23 allow up to 4
+              hours. After the limit, that zone locks for 24 hours.
+            </p>
+          </article>
+          <article class="amp-card">
+            <p class="card-kicker">Important permit rule</p>
+            <h2>AMP Stalls</h2>
+            <p>
+              A parking permit does not waive AMP fees. If a stall is marked for
+              AMP pay-by-space, payment is still required.
+            </p>
+          </article>
+        </section>
+
+        <section class="planner">
+          <div class="planner-copy">
+            <p class="eyebrow">Destination planner</p>
+            <h2>Choose where you're headed</h2>
+            <p>
+              Pick a campus destination to see the best visitor parking options
+              before you arrive.
+            </p>
+            <div class="planner-controls">
+              <label class="destination-field" for="destination-select">
+                <span>Campus destination</span>
+                <select id="destination-select">
+                  <option value="">Select a building or area</option>
+                </select>
+              </label>
+              <button id="clear-destination" class="clear-action" type="button">
+                Clear
+              </button>
+            </div>
+            <div id="destination-chips" class="destination-chips" aria-label="Popular destinations"></div>
+          </div>
+
+          <aside class="recommendation-panel">
+            <p class="card-kicker">Best match</p>
+            <h3 id="recommendation-title">Select a campus destination</h3>
+            <p id="recommendation-summary">
+              We will recommend the strongest visitor lots for that stop and
+              highlight them in the lot list and on the map.
+            </p>
+            <div id="recommendation-list" class="recommendation-list"></div>
+          </aside>
+        </section>
+
+        <section class="finder">
+          <div class="finder-heading">
+            <div>
+              <p class="eyebrow">Lot finder</p>
+              <h2>Search lots by building, street, or lot number</h2>
+              <p>
+                Search manually or use the destination planner to focus the
+                list on the most useful visitor lots.
+              </p>
+            </div>
+            <div class="finder-controls">
+              <label class="search-field" for="search">
+                <span>Search campus destination</span>
+                <input id="search" type="search" placeholder="Try Visitor Center, Wells, Lot 19, Prince..." />
+              </label>
+              <div class="filter-bar" role="group" aria-label="Parking filters">
+                <button class="filter-chip active" data-filter="all" type="button">All areas</button>
+                <button class="filter-chip" data-filter="day" type="button">Day permit</button>
+                <button class="filter-chip" data-filter="overnight" type="button">Overnight</button>
+                <button class="filter-chip" data-filter="amp" type="button">AMP</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="finder-layout">
+            <section class="results-panel" aria-live="polite">
+              <div class="results-meta">
+                <p id="results-count">0 areas</p>
+                <p class="results-hint">
+                  Visitor kiosk day parking is generally available in Lots 1, 2,
+                  4, 7, 9, 11, 12, 14, 18, 19, 21, 24, plus Prince and Prairie
+                  Street.
+                </p>
+              </div>
+              <div id="results" class="results-grid"></div>
+            </section>
+
+            <aside class="detail-panel">
+              <p class="detail-kicker">Selected area</p>
+              <h3 id="detail-title">Pick a lot to see details</h3>
+              <p id="detail-summary">
+                The lot list will explain where visitors can park, when AMP
+                payment is required, and which areas support overnight parking.
+              </p>
+              <dl class="detail-grid">
+                <div>
+                  <dt>Nearby</dt>
+                  <dd id="detail-nearby">-</dd>
+                </div>
+                <div>
+                  <dt>Permit type</dt>
+                  <dd id="detail-permit">-</dd>
+                </div>
+                <div>
+                  <dt>AMP</dt>
+                  <dd id="detail-amp">-</dd>
+                </div>
+                <div>
+                  <dt>Overnight</dt>
+                  <dd id="detail-overnight">-</dd>
+                </div>
+              </dl>
+              <div class="detail-note">
+                <strong>Reminder:</strong>
+                <p id="detail-note">
+                  Check posted signs in the lot. Campus signage overrides
+                  general permit guidance.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="map-section">
+          <div class="map-copy">
+            <p class="eyebrow">Interactive map</p>
+            <h2>Tap a lot on the campus map</h2>
+            <p>
+              Click the numbered hotspots to jump straight to a parking area.
+              AMP-only lots use a separate color, and recommended lots glow
+              gold when a destination is selected.
+            </p>
+            <div class="map-legend" aria-label="Map legend">
+              <span class="legend-item"><span class="legend-dot default"></span>Visitor lot</span>
+              <span class="legend-item"><span class="legend-dot amp-only"></span>AMP-only lot</span>
+              <span class="legend-item"><span class="legend-dot recommended"></span>Recommended for destination</span>
+              <span class="legend-item"><span class="legend-dot active"></span>Currently selected</span>
+            </div>
+            <div class="map-links">
+              <a href="https://www.uww.edu/studentaffairs/parking-regulations/visitors" target="_blank" rel="noreferrer">Visitor parking page</a>
+              <a href="https://www.uww.edu/studentaffairs/parking-regulations" target="_blank" rel="noreferrer">Parking home</a>
+              <a href="https://www.uww.edu/documents/adminaffairs/parking/PK_Parking%20Map.pdf" target="_blank" rel="noreferrer">Online parking map</a>
+            </div>
+          </div>
+          <figure class="map-frame">
+            <div class="map-canvas">
+              <img src="assets/map.png" alt="UW-Whitewater campus parking map showing lot numbers and permit designations" />
+              <div id="hotspot-layer" class="hotspot-layer" aria-label="Clickable parking lot hotspots"></div>
+            </div>
+            <figcaption>
+              Hotspot positions are aligned to the campus map in this app for
+              quick wayfinding.
+            </figcaption>
+          </figure>
+        </section>
+
+      </main>
+
+      <footer class="site-footer">
+        <p>
+          Built from the official
+          <a href="https://www.uww.edu/studentaffairs/parking-regulations/visitors" target="_blank" rel="noreferrer">UW-Whitewater Visitor Parking page</a>
+          accessed on April 6, 2026, plus the campus parking map provided in
+          this workspace. Nearby landmark suggestions and hotspot placement are
+          map-based approximations.
+        </p>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
