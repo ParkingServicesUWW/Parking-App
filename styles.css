@@ -902,8 +902,15 @@ figcaption {
     margin-bottom: 0.9rem;
   }
 
+  .map-section {
+    gap: 0.75rem;
+  }
+
   .map-frame {
     border-radius: 22px;
+    padding: 0.45rem;
+    margin-inline: -0.2rem;
+    width: calc(100% + 0.4rem);
   }
 
   .map-canvas {
@@ -951,6 +958,12 @@ figcaption {
 
   h2 {
     font-size: 1.65rem;
+  }
+
+  .map-frame {
+    padding: 0.35rem;
+    margin-inline: -0.3rem;
+    width: calc(100% + 0.6rem);
   }
 
   .destination-field select,
