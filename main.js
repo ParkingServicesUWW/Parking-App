@@ -546,10 +546,13 @@ const recommendationTitle = document.getElementById("recommendation-title");
 const recommendationSummary = document.getElementById("recommendation-summary");
 const recommendationList = document.getElementById("recommendation-list");
 const hotspotLayer = document.getElementById("hotspot-layer");
+const pageButtons = Array.from(document.querySelectorAll(".bottom-nav-button"));
+const pagePanels = Array.from(document.querySelectorAll(".app-page"));
 
 let activeFilter = "all";
 let activeAreaId = "lot-7";
 let activeDestinationId = "";
+let activePage = "home";
 
 function getAreaById(id) {
   return parkingAreas.find((area) => area.id === id);
@@ -884,7 +887,33 @@ function renderFilters() {
   });
 }
 
+function renderPages() {
+  pagePanels.forEach((panel) => {
+    const isActive = panel.dataset.pagePanel === activePage;
+    panel.classList.toggle("is-active", isActive);
+    panel.hidden = !isActive;
+  });
+
+  pageButtons.forEach((button) => {
+    const isActive = button.dataset.page === activePage;
+    button.classList.toggle("active", isActive);
+
+    if (isActive) {
+      button.setAttribute("aria-current", "page");
+    } else {
+      button.removeAttribute("aria-current");
+    }
+  });
+}
+
+function setActivePage(pageId) {
+  activePage = pageId;
+  renderPages();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function renderAll() {
+  renderPages();
   renderDestinationControls();
   renderFilters();
   renderRecommendations();
@@ -910,5 +939,11 @@ filterButtons.forEach((button) => {
 });
 
 searchInput.addEventListener("input", renderAll);
+
+pageButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setActivePage(button.dataset.page);
+  });
+});
 
 renderAll();
