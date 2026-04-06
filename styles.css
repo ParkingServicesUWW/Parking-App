@@ -851,8 +851,7 @@ figcaption {
   }
 
   .destination-chips,
-  .filter-bar,
-  .map-legend {
+  .filter-bar {
     flex-wrap: nowrap;
     overflow-x: auto;
     padding-bottom: 0.35rem;
@@ -861,10 +860,21 @@ figcaption {
   }
 
   .destination-chip,
-  .filter-chip,
-  .legend-item {
+  .filter-chip {
     flex: 0 0 auto;
     white-space: nowrap;
+  }
+
+  .map-legend {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.55rem;
+  }
+
+  .legend-item {
+    width: 100%;
+    justify-content: flex-start;
+    white-space: normal;
   }
 
   .results-meta {
