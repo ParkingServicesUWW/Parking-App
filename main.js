@@ -330,7 +330,7 @@ const destinations = [
     summary: "Best east-side visitor options for library visits and nearby academic appointments.",
     recommendations: [
       { lotId: "lot-12", reason: "Closest day-permit visitor lot to the library cluster." },
-      { lotId: "lot-14", reason: "Helpful second choice if you also need easy access to east-side classrooms." }
+      { lotId: "lot-12a", reason: "Useful AMP-only backup close to the library side of campus." }
     ]
   },
   {
@@ -376,17 +376,17 @@ const destinations = [
     name: "Bigelow Hall",
     summary: "Best visitor options for west-side residence hall visits near Bigelow.",
     recommendations: [
-      { lotId: "lot-8", reason: "Closest AMP option for a quick Bigelow Hall stop." },
-      { lotId: "lot-7", reason: "Good day-pass or AMP alternative if you want a broader campus-core option." }
+      { lotId: "lot-7", reason: "Best first option for Bigelow Hall visits." },
+      { lotId: "lot-8", reason: "Good nearby backup for a quicker west-side stop." }
     ]
   },
   {
     id: "drumlin-hall",
-    name: "Drumlin Hall",
-    summary: "Useful visitor choices for the west residence hall corridor.",
+    name: "Esker Dining Hall",
+    summary: "Useful north-east visitor choices for dining visits near the Wells residence hall area.",
     recommendations: [
-      { lotId: "lot-8", reason: "Closest AMP option for Drumlin Hall." },
-      { lotId: "lot-7", reason: "Strong day-pass or AMP fallback nearby." }
+      { lotId: "lot-18", reason: "Best daytime visitor lot for Esker Dining Hall." },
+      { lotId: "lot-19", reason: "Good nearby backup and also the official overnight visitor lot." }
     ]
   },
   {
@@ -464,10 +464,10 @@ const destinations = [
   {
     id: "mcgraw-hall",
     name: "McGraw Hall",
-    summary: "Good south-central visitor parking choices for McGraw Hall.",
+    summary: "Good east-side visitor parking choices for McGraw Hall.",
     recommendations: [
-      { lotId: "lot-2", reason: "Best first option for McGraw Hall visits." },
-      { lotId: "prince-street", reason: "Good west-side day-pass street parking option for McGraw Hall." }
+      { lotId: "lot-12", reason: "Best first option for McGraw Hall visits." },
+      { lotId: "lot-12a", reason: "Good AMP-only backup close to the same east-side corridor." }
     ]
   },
   {
@@ -500,12 +500,113 @@ const destinations = [
   },
   {
     id: "wells-hall",
-    name: "Wells Hall",
+    name: "Wells East/West",
     popular: true,
-    summary: "Best visitor parking for north-east residence hall visits and overnight stays.",
+    summary: "Best visitor parking for Wells East/West visits and overnight stays in the north-east residence hall area.",
     recommendations: [
       { lotId: "lot-19", reason: "Primary visitor lot for Wells Hall and the official overnight choice." },
-      { lotId: "lot-18", reason: "Useful daytime fallback close to the same north-east area." }
+      { lotId: "lot-18", reason: "Useful daytime fallback close to the same north-east area." },
+      { lotId: "lauderdale", reason: "Good AMP option for short visits on the east side of the residence hall area." }
+    ]
+  },
+  {
+    id: "maiingan-hall",
+    name: "Ma'iingan Hall",
+    summary: "Useful campus-core visitor options for Ma'iingan Hall.",
+    recommendations: [
+      { lotId: "lot-9", reason: "Best first option for Ma'iingan Hall visits." },
+      { lotId: "lot-7", reason: "Good day-pass or AMP backup near the Visitor Center side of campus core." }
+    ]
+  },
+  {
+    id: "mccutchan-hall",
+    name: "McCutchan Hall",
+    summary: "Best west-side visitor parking choices for McCutchan Hall.",
+    recommendations: [
+      { lotId: "lot-2", reason: "Best first option for McCutchan Hall visits." },
+      { lotId: "prince-street", reason: "Good west-side day-pass street parking option nearby." }
+    ]
+  },
+  {
+    id: "heide-hall",
+    name: "Heide Hall",
+    summary: "Helpful east-side visitor parking options for Heide Hall.",
+    recommendations: [
+      { lotId: "lot-12", reason: "Best day-pass or AMP option for Heide Hall." },
+      { lotId: "prairie-street", reason: "Good east-side day-pass street parking option nearby." },
+      { lotId: "lot-12a", reason: "Useful AMP-only backup for a shorter stop." }
+    ]
+  },
+  {
+    id: "tutt-hall",
+    name: "Tutt Hall",
+    summary: "Best north-east visitor parking options for Tutt Hall.",
+    recommendations: [
+      { lotId: "lot-18", reason: "Best daytime visitor lot for Tutt Hall." },
+      { lotId: "lot-19", reason: "Good nearby backup and helpful if the visit extends later." }
+    ]
+  },
+  {
+    id: "wellers-hall",
+    name: "Wellers Hall",
+    summary: "Best north-east visitor parking options for Wellers Hall.",
+    recommendations: [
+      { lotId: "lot-19", reason: "Closest visitor lot and the official overnight option for this area." },
+      { lotId: "lot-18", reason: "Useful daytime backup nearby." }
+    ]
+  },
+  {
+    id: "knilans-hall",
+    name: "Knilans Hall",
+    summary: "Helpful visitor parking options for Knilans Hall.",
+    recommendations: [
+      { lotId: "lot-4", reason: "Best first option for Knilans Hall visits." },
+      { lotId: "lot-18", reason: "Good backup on the north-east side of campus." }
+    ]
+  },
+  {
+    id: "clem-hall",
+    name: "Clem Hall",
+    summary: "Helpful west-side visitor parking options for Clem Hall.",
+    recommendations: [
+      { lotId: "lot-7", reason: "Best first option for Clem Hall visits." },
+      { lotId: "lot-8", reason: "Good nearby backup for Clem Hall visits." }
+    ]
+  },
+  {
+    id: "lee-hall",
+    name: "Lee Hall",
+    summary: "Helpful west-side visitor parking options for Lee Hall.",
+    recommendations: [
+      { lotId: "lot-7", reason: "Best first option for Lee Hall visits." },
+      { lotId: "koshkonong", reason: "Useful AMP-only backup for short stops nearby." }
+    ]
+  },
+  {
+    id: "fricker-hall",
+    name: "Fricker Hall",
+    summary: "Helpful west-side visitor parking options for Fricker Hall.",
+    recommendations: [
+      { lotId: "lot-7", reason: "Best first option for Fricker Hall visits." },
+      { lotId: "koshkonong", reason: "Useful AMP-only backup for short stops nearby." }
+    ]
+  },
+  {
+    id: "arey-hall",
+    name: "Arey Hall",
+    summary: "Helpful west-side visitor parking options for Arey Hall.",
+    recommendations: [
+      { lotId: "lot-7", reason: "Best first option for Arey Hall visits." },
+      { lotId: "koshkonong", reason: "Useful AMP-only backup for short stops nearby." }
+    ]
+  },
+  {
+    id: "benson-hall",
+    name: "Benson Hall",
+    summary: "Helpful west-side visitor parking options for Benson Hall.",
+    recommendations: [
+      { lotId: "lot-7", reason: "Best first option for Benson Hall visits." },
+      { lotId: "lot-8", reason: "Good nearby backup for Benson Hall visits." }
     ]
   },
   {
@@ -562,21 +663,6 @@ function getDestinationById(id) {
   return destinations.find((destination) => destination.id === id);
 }
 
-function getRecommendationMap() {
-  const destination = getDestinationById(activeDestinationId);
-
-  if (!destination) {
-    return new Map();
-  }
-
-  return new Map(
-    destination.recommendations.map((recommendation, index) => [
-      recommendation.lotId,
-      { ...recommendation, order: index }
-    ])
-  );
-}
-
 function matchesFilter(area) {
   if (activeFilter === "all") {
     return true;
@@ -620,26 +706,20 @@ function setActiveArea(areaId) {
 
 function setDestination(destinationId) {
   activeDestinationId = destinationId;
-
-  if (destinationId) {
-    const destination = getDestinationById(destinationId);
-    const firstRecommendation = destination?.recommendations[0];
-
-    if (firstRecommendation) {
-      activeAreaId = firstRecommendation.lotId;
-    }
-  }
-
   renderAll();
 }
 
 function populateDestinations() {
-  destinations.forEach((destination) => {
+  [...destinations]
+    .sort((left, right) => left.name.localeCompare(right.name))
+    .forEach((destination) => {
     const option = document.createElement("option");
     option.value = destination.id;
     option.textContent = destination.name;
     destinationSelect.appendChild(option);
+    });
 
+  destinations.forEach((destination) => {
     if (destination.popular) {
       const chip = document.createElement("button");
       chip.type = "button";
@@ -671,7 +751,7 @@ function renderRecommendations() {
   if (!destination) {
     recommendationTitle.textContent = "Select a campus destination";
     recommendationSummary.textContent =
-      "We will recommend the strongest visitor lots for that stop and highlight them in the lot list and on the map.";
+      "We will recommend the strongest visitor lots for that stop so guests can compare the best parking options.";
 
     const empty = document.createElement("div");
     empty.className = "recommendation-empty";
@@ -690,10 +770,8 @@ function renderRecommendations() {
       return;
     }
 
-    const item = document.createElement("button");
-    item.type = "button";
+    const item = document.createElement("article");
     item.className = "recommendation-item";
-    item.addEventListener("click", () => setActiveArea(area.id));
 
     const title = document.createElement("h4");
     title.textContent = area.name;
@@ -701,9 +779,10 @@ function renderRecommendations() {
     reason.textContent = recommendation.reason;
     const badges = document.createElement("div");
     badges.className = "badge-row";
-    badges.appendChild(
-      createBadge(area.tags.includes("day") ? "Day permit" : "Short-term", area.tags.includes("day") ? "day" : "amp")
-    );
+
+    if (area.tags.includes("day")) {
+      badges.appendChild(createBadge("Day permit", "day"));
+    }
 
     if (area.overnight) {
       badges.appendChild(createBadge("Overnight", "overnight"));
@@ -719,10 +798,6 @@ function renderRecommendations() {
 }
 
 function renderDetails(area) {
-  const recommendationMap = getRecommendationMap();
-  const recommendation = recommendationMap.get(area.id);
-  const destination = getDestinationById(activeDestinationId);
-
   detailTitle.textContent = area.name;
   detailSummary.textContent = area.summary;
   detailNearby.textContent = area.nearby;
@@ -732,35 +807,11 @@ function renderDetails(area) {
     ? "Yes, official overnight visitor lot"
     : "No overnight visitor parking";
 
-  if (recommendation && destination) {
-    detailNote.textContent = `${area.note} Recommended for ${destination.name}: ${recommendation.reason}`;
-    return;
-  }
-
   detailNote.textContent = area.note;
 }
 
 function sortAreas(areas) {
-  const recommendationMap = getRecommendationMap();
-
-  return [...areas].sort((left, right) => {
-    const leftRecommendation = recommendationMap.get(left.id);
-    const rightRecommendation = recommendationMap.get(right.id);
-
-    if (leftRecommendation && rightRecommendation) {
-      return leftRecommendation.order - rightRecommendation.order;
-    }
-
-    if (leftRecommendation) {
-      return -1;
-    }
-
-    if (rightRecommendation) {
-      return 1;
-    }
-
-    return parkingAreas.findIndex((area) => area.id === left.id) - parkingAreas.findIndex((area) => area.id === right.id);
-  });
+  return [...areas];
 }
 
 function renderResults() {
@@ -768,7 +819,6 @@ function renderResults() {
   const filtered = sortAreas(
     parkingAreas.filter((area) => matchesFilter(area) && matchesSearch(area, query))
   );
-  const recommendationMap = getRecommendationMap();
 
   resultsCount.textContent = `${filtered.length} area${filtered.length === 1 ? "" : "s"} shown`;
   results.innerHTML = "";
@@ -802,10 +852,8 @@ function renderResults() {
     button.dataset.id = area.id;
 
     const isSelected = area.id === activeAreaId;
-    const isRecommended = recommendationMap.has(area.id);
 
     button.classList.toggle("selected", isSelected);
-    button.classList.toggle("recommended", isRecommended);
     button.setAttribute("aria-pressed", isSelected ? "true" : "false");
 
     if (isSelected) {
@@ -823,15 +871,15 @@ function renderResults() {
     location.textContent = area.nearby;
     copy.append(title, location);
 
-    const typeBadge = createBadge(area.permit.includes("AMP") ? "Short-term" : "Visitor", "info");
-    top.append(copy, typeBadge);
+    if (!area.tags.includes("amp")) {
+      const typeBadge = createBadge("Visitor", "info");
+      top.append(copy, typeBadge);
+    } else {
+      top.append(copy);
+    }
 
     const badgeRow = document.createElement("div");
     badgeRow.className = "badge-row";
-
-    if (isRecommended) {
-      badgeRow.appendChild(createBadge("Recommended", "recommended"));
-    }
 
     if (area.tags.includes("day")) {
       badgeRow.appendChild(createBadge("Day permit", "day"));
@@ -852,7 +900,6 @@ function renderResults() {
 }
 
 function renderHotspots() {
-  const recommendationMap = getRecommendationMap();
   hotspotLayer.innerHTML = "";
 
   parkingAreas
@@ -860,14 +907,12 @@ function renderHotspots() {
     .forEach((area) => {
       const button = document.createElement("button");
       const isSelected = area.id === activeAreaId;
-      const isRecommended = recommendationMap.has(area.id);
       const isAmpOnly = area.permit === "AMP pay-by-space only";
 
       button.type = "button";
       button.className = "map-hotspot";
       button.classList.toggle("active", isSelected);
-      button.classList.toggle("amp-only", isAmpOnly && !isSelected && !isRecommended);
-      button.classList.toggle("recommended", isRecommended && !isSelected);
+      button.classList.toggle("amp-only", isAmpOnly && !isSelected);
       button.style.setProperty("--x", area.x);
       button.style.setProperty("--y", area.y);
       button.textContent = area.hotspotLabel || area.name.replace("Lot ", "");
