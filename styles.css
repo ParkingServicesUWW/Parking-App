@@ -288,6 +288,7 @@ figcaption {
 }
 
 .hero-actions,
+.hero-subactions,
 .map-links,
 .destination-chips,
 .filter-bar,
@@ -299,6 +300,7 @@ figcaption {
 }
 
 .hero-actions,
+.hero-subactions,
 .hero-pills {
   position: relative;
   z-index: 1;
@@ -306,6 +308,7 @@ figcaption {
 
 .primary-action,
 .secondary-action,
+.tertiary-action,
 .map-links a,
 .clear-action {
   display: inline-flex;
@@ -326,6 +329,7 @@ figcaption {
 }
 
 .secondary-action,
+.tertiary-action,
 .map-links a,
 .clear-action {
   background: rgba(255, 255, 255, 0.96);
@@ -333,8 +337,19 @@ figcaption {
   color: var(--warhawk-purple-deep);
 }
 
+.hero-subactions {
+  margin-top: 0.75rem;
+}
+
+.tertiary-action {
+  background: rgba(196, 199, 205, 0.96);
+  border-color: rgba(90, 95, 102, 0.22);
+  color: #111111;
+}
+
 .primary-action:hover,
 .secondary-action:hover,
+.tertiary-action:hover,
 .map-links a:hover,
 .clear-action:hover,
 .destination-chip:hover,
@@ -491,6 +506,24 @@ figcaption {
 
 .recommendation-summary {
   margin-top: 0.6rem;
+}
+
+.recommendation-action {
+  margin-top: 0.95rem;
+}
+
+.recommendation-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.8rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(80, 29, 130, 0.16);
+  color: var(--warhawk-purple-deep);
 }
 
 .recommendation-list {
@@ -915,6 +948,7 @@ figcaption {
 
   .primary-action,
   .secondary-action,
+  .tertiary-action,
   .map-links a,
   .clear-action {
     width: 100%;

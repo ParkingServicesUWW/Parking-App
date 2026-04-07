@@ -165,6 +165,21 @@ const parkingAreas = [
     hotspotLabel: "12A"
   },
   {
+    id: "lot-13",
+    name: "Lot 13",
+    nearby: "UW Credit Union and nearby east-side offices",
+    permit: "UW Credit Union guest stalls only",
+    amp: false,
+    overnight: false,
+    tags: ["day"],
+    search: ["lot 13", "13", "uw credit union", "credit union", "bank"],
+    summary: "Lot 13 includes specific guest stalls for visitors using the UW Credit Union on campus.",
+    note: "Use only the designated guest stalls when visiting UW Credit Union. Other spaces may be assigned to different permit groups.",
+    x: 63.2,
+    y: 73.4,
+    hotspotLabel: "13"
+  },
+  {
     id: "lot-14",
     name: "Lot 14",
     nearby: "Upham Hall and the east side classroom cluster",
@@ -292,6 +307,18 @@ const parkingAreas = [
     x: 46.7,
     y: 88.8,
     hotspotLabel: "H"
+  },
+  {
+    id: "hyer-parking-circle",
+    name: "Hyer Parking Circle",
+    nearby: "Alumni Center guest parking circle near Hyer Hall",
+    permit: "Alumni Center guest stalls only",
+    amp: false,
+    overnight: false,
+    tags: ["day"],
+    search: ["hyer parking circle", "alumni center", "guest stalls", "hyer circle"],
+    summary: "This parking circle is reserved for Alumni Center guests in the designated visitor stalls.",
+    note: "Only use the marked guest stalls for Alumni Center visits. Other nearby spaces may follow different campus rules."
   },
   {
     id: "koshkonong",
@@ -439,7 +466,11 @@ const destinations = [
   {
     id: "goodhue-hall",
     name: "Goodhue Hall",
-    summary: "Campus-core parking options for quick visits near Goodhue Hall.",
+    summary: "Building used for Police, Housing and Guest Housing.",
+    action: {
+      label: "Guest Housing",
+      href: "https://www.uww.edu/housing/housing-options/guest-housing#x505701"
+    },
     recommendations: [
       { lotId: "lot-7", reason: "Best first option for Goodhue Hall visits." },
       { lotId: "lot-23", reason: "Useful AMP-only backup for a shorter stop near Goodhue Hall." }
@@ -488,6 +519,14 @@ const destinations = [
     recommendations: [
       { lotId: "lot-12", reason: "Best first option for McGraw Hall visits." },
       { lotId: "lot-12a", reason: "Good AMP-only backup close to the same east-side corridor." }
+    ]
+  },
+  {
+    id: "uw-credit-union",
+    name: "UW Credit Union",
+    summary: "Guest stalls in Lot 13 are the best option for visitors going to the campus credit union.",
+    recommendations: [
+      { lotId: "lot-13", reason: "Designated guest stalls in Lot 13 are intended for UW Credit Union visitors." }
     ]
   },
   {
@@ -647,6 +686,14 @@ const destinations = [
       { lotId: "hyer", reason: "Closest AMP-only option for quick Hyer Hall stops." },
       { lotId: "lot-1", reason: "Good day-pass or AMP fallback for Hyer Hall visits." }
     ]
+  },
+  {
+    id: "alumni-center",
+    name: "Alumni Center",
+    summary: "The Hyer Parking Circle guest stalls are reserved for Alumni Center visitors.",
+    recommendations: [
+      { lotId: "hyer-parking-circle", reason: "Use the designated guest stalls in the Hyer Parking Circle for Alumni Center visits." }
+    ]
   }
 ];
 
@@ -667,6 +714,7 @@ const destinationChips = document.getElementById("destination-chips");
 const clearDestinationButton = document.getElementById("clear-destination");
 const recommendationTitle = document.getElementById("recommendation-title");
 const recommendationSummary = document.getElementById("recommendation-summary");
+const recommendationAction = document.getElementById("recommendation-action");
 const recommendationList = document.getElementById("recommendation-list");
 const hotspotLayer = document.getElementById("hotspot-layer");
 const pageButtons = Array.from(document.querySelectorAll(".bottom-nav-button"));
@@ -716,6 +764,13 @@ function formatAmp(area) {
   }
 
   return "Yes, with the usual 2-hour AMP maximum";
+}
+
+function showsDayPermitBadge(area) {
+  return (
+    area.tags.includes("day") &&
+    (area.permit === "Day visitor permit" || area.permit === "Day and overnight visitor permit")
+  );
 }
 
 function createBadge(label, className) {
@@ -789,6 +844,7 @@ function renderRecommendations() {
     recommendationTitle.textContent = "Select a campus destination";
     recommendationSummary.textContent =
       "We will recommend the strongest visitor lots for that stop so guests can compare the best parking options.";
+    recommendationAction.innerHTML = "";
 
     const empty = document.createElement("div");
     empty.className = "recommendation-empty";
@@ -800,6 +856,17 @@ function renderRecommendations() {
 
   recommendationTitle.textContent = destination.name;
   recommendationSummary.textContent = destination.summary;
+  recommendationAction.innerHTML = "";
+
+  if (destination.action) {
+    const link = document.createElement("a");
+    link.className = "recommendation-link";
+    link.href = destination.action.href;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    link.textContent = destination.action.label;
+    recommendationAction.appendChild(link);
+  }
 
   destination.recommendations.forEach((recommendation) => {
     const area = getAreaById(recommendation.lotId);
@@ -817,7 +884,7 @@ function renderRecommendations() {
     const badges = document.createElement("div");
     badges.className = "badge-row";
 
-    if (area.tags.includes("day")) {
+    if (showsDayPermitBadge(area)) {
       badges.appendChild(createBadge("Day permit", "day"));
     }
 
@@ -835,6 +902,20 @@ function renderRecommendations() {
 }
 
 function renderDetails(area) {
+  if (area.id === "hyer") {
+    const hyerCircle = getAreaById("hyer-parking-circle");
+
+    detailTitle.textContent = area.name;
+    detailSummary.textContent =
+      "Hyer includes AMP stalls for very short visits, and the Hyer Parking Circle includes designated guest stalls for the Alumni Center.";
+    detailNearby.textContent = "Hyer Hall, Alumni Center, and nearby guest parking stalls";
+    detailPermit.textContent = "Hyer AMP stalls and Alumni Center guest stalls only";
+    detailAmp.textContent = "Hyer stalls: 30-minute meter parking only; Circle: No AMP";
+    detailOvernight.textContent = "No overnight visitor parking";
+    detailNote.textContent = `${area.note} ${hyerCircle?.note ?? ""}`.trim();
+    return;
+  }
+
   detailTitle.textContent = area.name;
   detailSummary.textContent = area.summary;
   detailNearby.textContent = area.nearby;
@@ -913,7 +994,7 @@ function renderResults() {
     const badgeRow = document.createElement("div");
     badgeRow.className = "badge-row";
 
-    if (area.tags.includes("day")) {
+    if (showsDayPermitBadge(area)) {
       badgeRow.appendChild(createBadge("Day permit", "day"));
     }
 
