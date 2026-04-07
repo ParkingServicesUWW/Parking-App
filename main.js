@@ -47,7 +47,7 @@ const parkingAreas = [
   {
     id: "lot-4",
     name: "Lot 4",
-    nearby: "Moraine Hall, Fischer Hall, and east central academic buildings",
+    nearby: "Ambrose Health Center, Upham Hall, and Bookstore",
     permit: "Day visitor permit",
     amp: false,
     overnight: false,
@@ -287,8 +287,11 @@ const parkingAreas = [
     overnight: false,
     tags: ["amp"],
     search: ["hyer", "hyer hall"],
-    summary: "Use AMP here for quick visits near Hyer Hall.",
-    note: "This zone is not part of the standard visitor kiosk lot list."
+    summary: "Use AMP here for very short visits near Hyer Hall.",
+    note: "Hyer AMP stalls are 30-minute meter parking only. This zone is not part of the standard visitor kiosk lot list.",
+    x: 46.7,
+    y: 88.8,
+    hotspotLabel: "H"
   },
   {
     id: "koshkonong",
@@ -438,8 +441,8 @@ const destinations = [
     name: "Goodhue Hall",
     summary: "Campus-core parking options for quick visits near Goodhue Hall.",
     recommendations: [
-      { lotId: "lot-23", reason: "Closest AMP-only option for a short stop near Goodhue Hall." },
-      { lotId: "lot-7", reason: "Good day-pass or AMP alternative just west of the campus core." }
+      { lotId: "lot-7", reason: "Best first option for Goodhue Hall visits." },
+      { lotId: "lot-23", reason: "Useful AMP-only backup for a shorter stop near Goodhue Hall." }
     ]
   },
   {
@@ -702,6 +705,10 @@ function matchesSearch(area, query) {
 function formatAmp(area) {
   if (!area.amp) {
     return "No AMP pay-by-space listed";
+  }
+
+  if (area.id === "hyer") {
+    return "30-minute meter parking only";
   }
 
   if (area.id === "lot-11" || area.id === "lot-23") {
