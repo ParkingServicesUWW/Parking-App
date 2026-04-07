@@ -409,7 +409,6 @@ const destinations = [
   {
     id: "hyland-building",
     name: "Hyland Building",
-    popular: true,
     summary: "Best visitor options for the south-central academic corridor near Hyland.",
     recommendations: [
       { lotId: "lot-7", reason: "Best first option for Hyland Building visits." },
@@ -447,6 +446,7 @@ const destinations = [
   {
     id: "bookstore",
     name: "Bookstore",
+    popular: true,
     summary: "Good visitor parking options for bookstore trips near the campus core.",
     recommendations: [
       { lotId: "lot-7", reason: "Best first option for bookstore visits." },
@@ -524,6 +524,7 @@ const destinations = [
   {
     id: "uw-credit-union",
     name: "UW Credit Union",
+    popular: true,
     summary: "Guest stalls in Lot 13 are the best option for visitors going to the campus credit union.",
     recommendations: [
       { lotId: "lot-13", reason: "Designated guest stalls in Lot 13 are intended for UW Credit Union visitors." }
@@ -532,7 +533,8 @@ const destinations = [
   {
     id: "williams-center",
     name: "Williams Center",
-    summary: "Helpful for athletics and recreation-adjacent visits.",
+    popular: true,
+    summary: "Athletic Sports and Recreation Facilities.",
     recommendations: [
       { lotId: "lot-11", reason: "Nearest visitor option and useful for longer AMP stays too." },
       { lotId: "lot-24", reason: "Good alternative if your stop leans more toward the athletic complex." }
@@ -550,7 +552,6 @@ const destinations = [
   {
     id: "drumlin-dining",
     name: "Drumlin Dining Hall",
-    popular: true,
     summary: "Top north-east visitor choices for dining and residence hall visits.",
     recommendations: [
       { lotId: "lot-8", reason: "Best quick-stop option when you want to pay for AMP near Drumlin Dining Hall." },
@@ -560,7 +561,6 @@ const destinations = [
   {
     id: "wells-hall",
     name: "Wells East/West",
-    popular: true,
     summary: "Best visitor parking for Wells East/West visits and overnight stays in the north-east residence hall area.",
     recommendations: [
       { lotId: "lot-19", reason: "Primary visitor lot for Wells Hall and the official overnight choice." },
