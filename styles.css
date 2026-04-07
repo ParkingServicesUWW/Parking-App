@@ -195,7 +195,7 @@ select {
 }
 
 .hero-copy::after {
-  inset: auto -3.2rem 4.8rem auto;
+  inset: auto -3.2rem 2.4rem auto;
   width: 300px;
   height: 210px;
   background: linear-gradient(135deg, rgba(196, 199, 205, 0.88), rgba(196, 199, 205, 0.22));
