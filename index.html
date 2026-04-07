@@ -43,7 +43,7 @@
                   <p>826 W. Starin Road</p>
                 </article>
                 <article>
-                  <span class="fact-label">Hours</span>
+                <span class="fact-label">Office Hours</span>
                   <strong>Mon-Fri</strong>
                   <p>7:30 AM to 4:30 PM</p>
                 </article>
@@ -165,6 +165,41 @@
           </section>
 
           <section class="finder map-finder">
+            <aside id="map-selected-area" class="detail-panel" tabindex="-1">
+              <p class="detail-kicker">Selected area</p>
+              <h3 id="detail-title">Pick a lot to see details</h3>
+              <p id="detail-summary">
+                The selected lot will explain where visitors can park, when
+                AMP payment is required, and whether overnight parking is
+                allowed.
+              </p>
+              <dl class="detail-grid">
+                <div>
+                  <dt>Nearby</dt>
+                  <dd id="detail-nearby">-</dd>
+                </div>
+                <div>
+                  <dt>Permit type</dt>
+                  <dd id="detail-permit">-</dd>
+                </div>
+                <div>
+                  <dt>AMP</dt>
+                  <dd id="detail-amp">-</dd>
+                </div>
+                <div>
+                  <dt>Overnight</dt>
+                  <dd id="detail-overnight">-</dd>
+                </div>
+              </dl>
+              <div class="detail-note">
+                <strong>Reminder:</strong>
+                <p id="detail-note">
+                  Check posted signs in the lot. Campus signage overrides
+                  general permit guidance.
+                </p>
+              </div>
+            </aside>
+
             <div class="finder-heading">
               <div>
                 <p class="eyebrow">Lot finder</p>
@@ -188,54 +223,17 @@
               </div>
             </div>
 
-            <div class="finder-layout">
-              <aside class="detail-panel">
-                <p class="detail-kicker">Selected area</p>
-                <h3 id="detail-title">Pick a lot to see details</h3>
-                <p id="detail-summary">
-                  The selected lot will explain where visitors can park, when
-                  AMP payment is required, and whether overnight parking is
-                  allowed.
+            <section class="results-panel" aria-live="polite">
+              <div class="results-meta">
+                <p id="results-count">0 areas</p>
+                <p class="results-hint">
+                  Visitor kiosk day parking is generally available in Lots 1, 2,
+                  4, 7, 9, 11, 12, 14, 18, 19, 21, 24, plus Prince and Prairie
+                  Street.
                 </p>
-                <dl class="detail-grid">
-                  <div>
-                    <dt>Nearby</dt>
-                    <dd id="detail-nearby">-</dd>
-                  </div>
-                  <div>
-                    <dt>Permit type</dt>
-                    <dd id="detail-permit">-</dd>
-                  </div>
-                  <div>
-                    <dt>AMP</dt>
-                    <dd id="detail-amp">-</dd>
-                  </div>
-                  <div>
-                    <dt>Overnight</dt>
-                    <dd id="detail-overnight">-</dd>
-                  </div>
-                </dl>
-                <div class="detail-note">
-                  <strong>Reminder:</strong>
-                  <p id="detail-note">
-                    Check posted signs in the lot. Campus signage overrides
-                    general permit guidance.
-                  </p>
-                </div>
-              </aside>
-
-              <section class="results-panel" aria-live="polite">
-                <div class="results-meta">
-                  <p id="results-count">0 areas</p>
-                  <p class="results-hint">
-                    Visitor kiosk day parking is generally available in Lots 1, 2,
-                    4, 7, 9, 11, 12, 14, 18, 19, 21, 24, plus Prince and Prairie
-                    Street.
-                  </p>
-                </div>
-                <div id="results" class="results-grid"></div>
-              </section>
-            </div>
+              </div>
+              <div id="results" class="results-grid"></div>
+            </section>
           </section>
         </section>
 
@@ -245,7 +243,7 @@
               <p class="card-kicker">AMP pay-by-space</p>
               <h2>Short-term zones</h2>
               <p>
-                AMP spaces exist in Lots 1, 2, 3, 4, 7, 8, 11, 12, 12A, 14, and
+                AMP spaces exist in Lots 1, 2, 3, 4R, 7, 8, 11, 12, 12A, 14, and
                 23, plus Hyer, Koshkonong Drive, and Lauderdale Drive.
               </p>
             </article>

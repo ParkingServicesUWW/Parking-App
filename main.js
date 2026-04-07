@@ -49,15 +49,30 @@ const parkingAreas = [
     name: "Lot 4",
     nearby: "Moraine Hall, Fischer Hall, and east central academic buildings",
     permit: "Day visitor permit",
-    amp: true,
+    amp: false,
     overnight: false,
-    tags: ["day", "amp"],
+    tags: ["day"],
     search: ["lot 4", "moraine", "fischer", "east central"],
-    summary: "Useful for central-east visits with both kiosk day parking and AMP short-term options.",
-    note: "Visitors using Lot 4 should park in the south half of the lot. The north half is reserved for residents. Check stall signage, and only AMP-labeled spaces use app payment.",
+    summary: "Useful for central-east visits that need standard day visitor parking.",
+    note: "Visitors using Lot 4 should park in the south half of the lot. The north half is reserved for residents. Lot 4 itself is day-pass only, so AMP payment does not apply here.",
     x: 65.2,
     y: 57.2,
     hotspotLabel: "4"
+  },
+  {
+    id: "lot-4r",
+    name: "Lot 4R",
+    nearby: "North of Lot 4 near Knilans Hall and east central academic buildings",
+    permit: "AMP pay-by-space only",
+    amp: true,
+    overnight: false,
+    tags: ["amp"],
+    search: ["lot 4r", "4r", "fischer", "east central", "north of lot 4"],
+    summary: "AMP-only short-term parking just north of Lot 4.",
+    note: "Lot 4R is separate from Lot 4. Payment is required in marked 4R spaces.",
+    x: 66.1,
+    y: 47.1,
+    hotspotLabel: "4R"
   },
   {
     id: "lot-7",
@@ -386,6 +401,7 @@ const destinations = [
     summary: "Useful north-east visitor choices for dining visits near the Wells residence hall area.",
     recommendations: [
       { lotId: "lot-18", reason: "Best daytime visitor lot for Esker Dining Hall." },
+      { lotId: "lot-4r", reason: "Useful AMP-only option for a shorter Esker Dining Hall visit." },
       { lotId: "lot-19", reason: "Good nearby backup and also the official overnight visitor lot." }
     ]
   },
@@ -412,8 +428,9 @@ const destinations = [
     name: "Fischer Hall",
     summary: "Useful central-east visitor choices for Fischer Hall.",
     recommendations: [
-      { lotId: "lot-4", reason: "Best day-pass or AMP lot for Fischer Hall." },
-      { lotId: "lot-14", reason: "Good east-side fallback with both day-pass and AMP access." }
+      { lotId: "lot-7", reason: "Best first option for Fischer Hall visits." },
+      { lotId: "lot-4", reason: "Good day-pass option closer to the east-central side of campus." },
+      { lotId: "lot-23", reason: "Useful AMP-only option for a shorter stop near Fischer Hall." }
     ]
   },
   {
@@ -457,7 +474,7 @@ const destinations = [
     name: "Ambrose Health Center",
     summary: "Useful visitor recommendations for Ambrose Health Center and nearby buildings.",
     recommendations: [
-      { lotId: "lot-4", reason: "Best central-east day-pass or AMP option for Ambrose Health Center." },
+      { lotId: "lot-4", reason: "Best central-east day-pass option for Ambrose Health Center." },
       { lotId: "lot-14", reason: "Good east-side fallback if you want easier access from Starin Road." }
     ]
   },
@@ -561,6 +578,7 @@ const destinations = [
     summary: "Helpful visitor parking options for Knilans Hall.",
     recommendations: [
       { lotId: "lot-4", reason: "Best first option for Knilans Hall visits." },
+      { lotId: "lot-4r", reason: "Useful AMP-only option just north of Lot 4 for shorter visits." },
       { lotId: "lot-18", reason: "Good backup on the north-east side of campus." }
     ]
   },
@@ -640,6 +658,7 @@ const detailPermit = document.getElementById("detail-permit");
 const detailAmp = document.getElementById("detail-amp");
 const detailOvernight = document.getElementById("detail-overnight");
 const detailNote = document.getElementById("detail-note");
+const detailPanel = document.getElementById("map-selected-area");
 const destinationSelect = document.getElementById("destination-select");
 const destinationChips = document.getElementById("destination-chips");
 const clearDestinationButton = document.getElementById("clear-destination");
@@ -702,6 +721,17 @@ function createBadge(label, className) {
 function setActiveArea(areaId) {
   activeAreaId = areaId;
   renderAll();
+}
+
+function focusSelectedArea() {
+  if (activePage !== "map" || !detailPanel || !window.matchMedia("(max-width: 900px)").matches) {
+    return;
+  }
+
+  requestAnimationFrame(() => {
+    detailPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+    detailPanel.focus({ preventScroll: true });
+  });
 }
 
 function setDestination(destinationId) {
@@ -871,12 +901,7 @@ function renderResults() {
     location.textContent = area.nearby;
     copy.append(title, location);
 
-    if (!area.tags.includes("amp")) {
-      const typeBadge = createBadge("Visitor", "info");
-      top.append(copy, typeBadge);
-    } else {
-      top.append(copy);
-    }
+    top.append(copy);
 
     const badgeRow = document.createElement("div");
     badgeRow.className = "badge-row";
@@ -918,7 +943,10 @@ function renderHotspots() {
       button.textContent = area.hotspotLabel || area.name.replace("Lot ", "");
       button.setAttribute("aria-label", `${area.name}: ${area.nearby}`);
       button.title = `${area.name} - ${area.nearby}`;
-      button.addEventListener("click", () => setActiveArea(area.id));
+      button.addEventListener("click", () => {
+        setActiveArea(area.id);
+        focusSelectedArea();
+      });
 
       hotspotLayer.appendChild(button);
     });

@@ -198,7 +198,7 @@ select {
   inset: auto -3rem -4rem auto;
   width: 220px;
   height: 220px;
-  background: linear-gradient(135deg, rgba(252, 184, 19, 0.85), rgba(252, 184, 19, 0.15));
+  background: linear-gradient(135deg, rgba(196, 199, 205, 0.88), rgba(196, 199, 205, 0.22));
   transform: rotate(16deg);
 }
 
@@ -352,9 +352,11 @@ figcaption {
 .hero-pills li {
   padding: 0.7rem 0.95rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(80, 29, 130, 0.16);
+  color: var(--warhawk-purple-deep);
   font-size: 0.95rem;
+  font-weight: 700;
 }
 
 .hero-panel {
@@ -547,6 +549,19 @@ figcaption {
   padding: 1.15rem;
 }
 
+.map-finder .detail-panel,
+.map-finder .results-panel {
+  width: 100%;
+}
+
+.map-finder .detail-panel {
+  margin-bottom: 1.2rem;
+}
+
+.map-finder .results-panel {
+  margin-top: 1.2rem;
+}
+
 #results-count {
   margin: 0;
   font-weight: 800;
@@ -707,8 +722,8 @@ figcaption {
 }
 
 .legend-dot.active {
-  background: var(--warhawk-purple-deep);
-  box-shadow: 0 0 0 3px rgba(252, 184, 19, 0.35);
+  background: var(--warhawk-gold);
+  box-shadow: none;
 }
 
 .map-links {
@@ -768,8 +783,9 @@ figcaption {
 }
 
 .map-hotspot.active {
-  background: var(--warhawk-purple-deep);
-  border-color: var(--warhawk-gold);
+  background: var(--warhawk-gold);
+  color: #362600;
+  border-color: white;
   box-shadow: 0 0 0 4px rgba(252, 184, 19, 0.28), 0 12px 24px rgba(41, 18, 70, 0.28);
 }
 
