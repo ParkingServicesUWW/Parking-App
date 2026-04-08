@@ -431,6 +431,10 @@ figcaption {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.amp-section {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
 .info-card,
 .amp-card {
   padding: 1.45rem;
