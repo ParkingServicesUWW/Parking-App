@@ -62,7 +62,7 @@ const parkingAreas = [
   {
     id: "lot-4r",
     name: "Lot 4R",
-    nearby: "North of Lot 4 near Knilans Hall and east central academic buildings",
+    nearby: "North of Lot 4 near Knilans Hall and Esker Dining Hall",
     permit: "AMP pay-by-space only",
     amp: true,
     overnight: false,
@@ -77,7 +77,7 @@ const parkingAreas = [
   {
     id: "lot-7",
     name: "Lot 7",
-    nearby: "Visitor Center, University Center, and campus core",
+    nearby: "Central campus lot near Visitor Center, Bookstore, and Goodhue Hall",
     permit: "Day visitor permit",
     amp: true,
     overnight: false,
@@ -107,7 +107,7 @@ const parkingAreas = [
   {
     id: "lot-9",
     name: "Lot 9",
-    nearby: "Visitor Center and campus core just north of the UC",
+    nearby: "Ma'iingan resident hall and William Center near center of campus",
     permit: "Day visitor permit",
     amp: false,
     overnight: false,
@@ -152,7 +152,7 @@ const parkingAreas = [
   {
     id: "lot-12a",
     name: "Lot 12A",
-    nearby: "University Center east side and nearby campus core spaces",
+    nearby: "University Center east side, short term meter parking",
     permit: "AMP pay-by-space only",
     amp: true,
     overnight: false,
@@ -182,7 +182,7 @@ const parkingAreas = [
   {
     id: "lot-14",
     name: "Lot 14",
-    nearby: "Upham Hall and the east side classroom cluster",
+    nearby: "Upham Hall and east side academic buildings",
     permit: "Day visitor permit",
     amp: true,
     overnight: false,
@@ -197,7 +197,7 @@ const parkingAreas = [
   {
     id: "lot-18",
     name: "Lot 18",
-    nearby: "Drumlin Dining Hall and the north east campus edge",
+    nearby: "Esker Dining hall and north east resident halls",
     permit: "Day visitor permit",
     amp: false,
     overnight: false,
@@ -212,7 +212,7 @@ const parkingAreas = [
   {
     id: "lot-19",
     name: "Lot 19",
-    nearby: "Wells Hall and the northeast residence hall area",
+    nearby: "Northeast residence hall area and guest overnight lot",
     permit: "Day and overnight visitor permit",
     amp: false,
     overnight: true,
@@ -227,7 +227,7 @@ const parkingAreas = [
   {
     id: "lot-21",
     name: "Lot 21",
-    nearby: "Fremont Street side of campus",
+    nearby: "Facilities Planning & Management building off Fremont Street",
     permit: "Day visitor permit",
     amp: false,
     overnight: false,
@@ -242,7 +242,7 @@ const parkingAreas = [
   {
     id: "lot-23",
     name: "Lot 23",
-    nearby: "Center of campus near Goodhue and academic buildings",
+    nearby: "Meter lot near Goodhue and Fischer Hall",
     permit: "AMP pay-by-space only",
     amp: true,
     overnight: false,
@@ -257,7 +257,7 @@ const parkingAreas = [
   {
     id: "lot-24",
     name: "Lot 24",
-    nearby: "Athletic complex and north west campus edge",
+    nearby: "Stadium and athletic complex parking",
     permit: "Day visitor permit",
     amp: false,
     overnight: false,
@@ -272,7 +272,7 @@ const parkingAreas = [
   {
     id: "prince-street",
     name: "Prince Street",
-    nearby: "West side street parking corridor near residence halls and athletics",
+    nearby: "West side street parking near academic buildings",
     permit: "Day visitor permit",
     amp: false,
     overnight: false,
@@ -284,7 +284,7 @@ const parkingAreas = [
   {
     id: "prairie-street",
     name: "Prairie Street",
-    nearby: "East side street parking corridor",
+    nearby: "East side streeting parking near academic buildings",
     permit: "Day visitor permit",
     amp: false,
     overnight: false,
@@ -296,7 +296,7 @@ const parkingAreas = [
   {
     id: "hyer",
     name: "Hyer area",
-    nearby: "Hyer Hall and nearby short-term spaces",
+    nearby: "Hyer Hall parking, 30 min meter parking",
     permit: "AMP pay-by-space only",
     amp: true,
     overnight: false,
@@ -323,7 +323,7 @@ const parkingAreas = [
   {
     id: "koshkonong",
     name: "Koshkonong Drive",
-    nearby: "Drive-side short-term spaces in the campus core",
+    nearby: "One way street parking near Resident Halls on the west side of campus",
     permit: "AMP pay-by-space only",
     amp: true,
     overnight: false,
@@ -335,7 +335,7 @@ const parkingAreas = [
   {
     id: "lauderdale",
     name: "Lauderdale Drive",
-    nearby: "Drive-side short-term spaces east of the campus core",
+    nearby: "Short term meter street parking near north east resident halls",
     permit: "AMP pay-by-space only",
     amp: true,
     overnight: false,
