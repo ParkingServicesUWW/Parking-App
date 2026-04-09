@@ -726,6 +726,21 @@ figcaption {
   margin: 0.35rem 0 0;
 }
 
+.detail-directions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 1rem;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(80, 29, 130, 0.16);
+  color: var(--warhawk-purple-deep);
+}
+
 .map-copy {
   min-height: 100%;
 }
@@ -1024,6 +1039,11 @@ figcaption {
   .result-card,
   .recommendation-item {
     min-height: 0;
+  }
+
+  .detail-directions {
+    width: 100%;
+    min-height: 52px;
   }
 
   .result-location {

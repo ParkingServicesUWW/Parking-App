@@ -716,6 +716,7 @@ const recommendationTitle = document.getElementById("recommendation-title");
 const recommendationSummary = document.getElementById("recommendation-summary");
 const recommendationAction = document.getElementById("recommendation-action");
 const recommendationList = document.getElementById("recommendation-list");
+const detailDirections = document.getElementById("detail-directions");
 const hotspotLayer = document.getElementById("hotspot-layer");
 const pageButtons = Array.from(document.querySelectorAll(".bottom-nav-button"));
 const pagePanels = Array.from(document.querySelectorAll(".app-page"));
@@ -725,12 +726,49 @@ let activeAreaId = "lot-7";
 let activeDestinationId = "";
 let activePage = "home";
 
+const mapsDestinations = {
+  "lot-1": "105 N Prince St, Whitewater, WI 53190",
+  "lot-2": "221 N Prince St, Whitewater, WI 53190",
+  "lot-3": "259 N Prince St, Whitewater, WI 53190",
+  "lot-4": "325 N Prairie St, Whitewater, WI 53190",
+  "lot-4r": "325 N Prairie St, Whitewater, WI 53190",
+  "lot-7": "333 Warhawk Drive, Whitewater, WI 53190",
+  "lot-8": "320 Warhawk Drive, Whitewater, WI 53190",
+  "lot-9": "447 Warhawk Drive, Whitewater, WI 53190",
+  "lot-11": "500 Warhawk Drive, Whitewater, WI 53190",
+  "lot-12": "120 N Prairie St, Whitewater, WI 53190",
+  "lot-12a": "120 N Prairie St, Whitewater, WI 53190",
+  "lot-13": "200 N Prairie St, Whitewater, WI 53190",
+  "lot-14": "240 N Prairie St, Whitewater, WI 53190",
+  "lot-18": "500 N Prairie St, Whitewater, WI 53190",
+  "lot-19": "501 N Prairie St, Whitewater, WI 53190",
+  "lot-21": "Facilities Planning and Management, 500 N Fremont St, Whitewater, WI 53190",
+  "lot-23": "360 N Prairie St, Whitewater, WI 53190",
+  "lot-24": "902 West Schwager Dr, Whitewater, WI 53190",
+  "prince-street": "N Prince St, Whitewater, WI 53190",
+  "prairie-street": "N Prairie St, Whitewater, WI 53190",
+  hyer: "810 W Main St, Whitewater, WI 53190",
+  "hyer-parking-circle": "Alumni Center, 810 W Main St, Whitewater, WI 53190",
+  koshkonong: "Koshkonong Dr, Whitewater, WI 53190",
+  lauderdale: "W Lauderdale Dr, Whitewater, WI 53190"
+};
+
 function getAreaById(id) {
   return parkingAreas.find((area) => area.id === id);
 }
 
 function getDestinationById(id) {
   return destinations.find((destination) => destination.id === id);
+}
+
+function getMapsUrl(area) {
+  const destination = mapsDestinations[area.id];
+
+  if (!destination) {
+    return "";
+  }
+
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}`;
 }
 
 function matchesFilter(area) {
@@ -902,6 +940,17 @@ function renderRecommendations() {
 }
 
 function renderDetails(area) {
+  const mapsUrl = getMapsUrl(area);
+
+  if (mapsUrl) {
+    detailDirections.href = mapsUrl;
+    detailDirections.textContent = `Open ${area.name} in Google Maps`;
+    detailDirections.hidden = false;
+  } else {
+    detailDirections.hidden = true;
+    detailDirections.removeAttribute("href");
+  }
+
   if (area.id === "hyer") {
     const hyerCircle = getAreaById("hyer-parking-circle");
 
@@ -950,6 +999,8 @@ function renderResults() {
     detailAmp.textContent = "-";
     detailOvernight.textContent = "-";
     detailNote.textContent = "Campus signage still applies once you arrive.";
+    detailDirections.hidden = true;
+    detailDirections.removeAttribute("href");
 
     const empty = document.createElement("div");
     empty.className = "empty-state";
