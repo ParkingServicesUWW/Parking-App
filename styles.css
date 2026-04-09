@@ -330,7 +330,6 @@ figcaption {
 
 .secondary-action,
 .tertiary-action,
-.map-links a,
 .clear-action {
   background: rgba(255, 255, 255, 0.96);
   border: 1px solid rgba(80, 29, 130, 0.16);
@@ -345,6 +344,12 @@ figcaption {
   background: rgba(196, 199, 205, 0.96);
   border-color: rgba(90, 95, 102, 0.22);
   color: #111111;
+}
+
+.map-links a {
+  background: linear-gradient(135deg, var(--warhawk-purple), var(--warhawk-purple-deep));
+  border: 1px solid transparent;
+  color: white;
 }
 
 .primary-action:hover,
