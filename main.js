@@ -144,7 +144,7 @@ const parkingAreas = [
     tags: ["day", "amp"],
     search: ["lot 12", "andersen library", "library", "southeast"],
     summary: "A strong daytime choice for library visits and southeast campus appointments.",
-    note: "Lot 12A is also part of the official AMP list for short-term parking.",
+    note: "Use the kiosk or parking portal for a day permit. If you choose an AMP-marked stall, app payment is still required.",
     x: 68.8,
     y: 84.9,
     hotspotLabel: "12"
