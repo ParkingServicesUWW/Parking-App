@@ -454,6 +454,23 @@ figcaption {
   margin: 1rem 0 0;
 }
 
+.kiosk-directions-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  margin-top: 1rem;
+  padding: 0.85rem 1.2rem;
+  width: 100%;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(135deg, var(--warhawk-purple), var(--warhawk-purple-deep));
+  border: 1px solid transparent;
+  color: white;
+}
+
 .app-download-card .store-links {
   display: flex;
   flex-direction: column;
@@ -1067,6 +1084,11 @@ figcaption {
 
   .store-badge-main {
     font-size: 1.22rem;
+  }
+
+  .kiosk-directions-button {
+    width: 100%;
+    min-height: 52px;
   }
 
   .primary-action,
