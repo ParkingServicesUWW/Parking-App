@@ -456,15 +456,8 @@ figcaption {
 
 .app-download-card .store-links {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.store-stack {
-  display: grid;
   gap: 0.85rem;
+  margin-top: 1rem;
   justify-items: start;
 }
 
@@ -534,10 +527,6 @@ figcaption {
 
 .web-badge .store-badge-main {
   font-size: 1.28rem;
-}
-
-.web-badge {
-  align-self: center;
 }
 
 .planner-controls {
@@ -1061,7 +1050,6 @@ figcaption {
   }
 
   .app-download-card .store-links {
-    grid-template-columns: 1fr;
     justify-items: start;
   }
 
