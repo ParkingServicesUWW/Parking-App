@@ -69,7 +69,7 @@ const parkingAreas = [
     tags: ["amp"],
     search: ["lot 4r", "4r", "fischer", "east central", "north of lot 4"],
     summary: "AMP-only short-term parking just north of Lot 4.",
-    note: "Lot 4R is separate from Lot 4. Payment is required in marked 4R spaces.",
+    note: "Lot 4R is separate from Lot 4. This a yellow resident lot parking, make sure to park in AMP stalls only with a paid session.",
     x: 66.1,
     y: 47.1,
     hotspotLabel: "4R"
@@ -114,7 +114,7 @@ const parkingAreas = [
     tags: ["day"],
     search: ["lot 9", "visitor center", "uc", "campus core"],
     summary: "A general visitor day-parking option close to the center of campus.",
-    note: "Good fallback if Lot 7 is full and you still want to stay close to the Visitor Center area.",
+    note: "Good fallback if Lot 7 is full or close parking to William Center. Be aware of the Restricted Yellow Resident parking in this lot.",
     x: 37.8,
     y: 51.8,
     hotspotLabel: "9"
@@ -204,7 +204,7 @@ const parkingAreas = [
     tags: ["day"],
     search: ["lot 18", "drumlin dining hall", "north east"],
     summary: "Good for north-campus daytime access near dining and residence hall areas.",
-    note: "The official visitor page includes Lot 18 in the usual daytime kiosk permit list.",
+    note: "Esker Dining hall and north east resident halls parking, day passes and kiosk permit parking.",
     x: 62.7,
     y: 30.7,
     hotspotLabel: "18"
@@ -234,7 +234,7 @@ const parkingAreas = [
     tags: ["day"],
     search: ["lot 21", "fremont", "east remote"],
     summary: "A quieter perimeter option for daytime visits on the east side.",
-    note: "Useful when you want easier in-and-out access from the Fremont Street side.",
+    note: "Useful when you want easier in-and-out acces to the Facilities Planning & Management building off Fremont Street.",
     x: 94.4,
     y: 34.3,
     hotspotLabel: "21"
@@ -264,7 +264,7 @@ const parkingAreas = [
     tags: ["day"],
     search: ["lot 24", "athletic complex", "north west", "stadium"],
     summary: "Best for athletics and recreation facilities on the north west side of campus.",
-    note: "This is one of the standard daytime kiosk permit lots listed by Parking Services.",
+    note: "Perkins Stadium and Kachel Fieldhouse area parking, day passes and kisok pass parking. No AMP in this lot.",
     x: 41.2,
     y: 26.7,
     hotspotLabel: "24"
