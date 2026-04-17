@@ -436,6 +436,10 @@ figcaption {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.info-strip {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
 .amp-section {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
@@ -448,6 +452,68 @@ figcaption {
 .info-card ul {
   padding-left: 1.2rem;
   margin: 1rem 0 0;
+}
+
+.app-download-card .store-links {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.store-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-height: 72px;
+  padding: 0.8rem 1rem;
+  border-radius: 18px;
+  background: #111111;
+  color: white;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 14px 28px rgba(17, 17, 17, 0.16);
+}
+
+.store-badge-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.store-badge-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.store-badge-logo svg {
+  display: block;
+}
+
+.apple-logo svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
+.play-logo svg {
+  width: 26px;
+  height: 30px;
+}
+
+.store-badge-top {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.84;
+}
+
+.store-badge-main {
+  margin-top: 0.15rem;
+  font-size: 1.42rem;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .planner-controls {
